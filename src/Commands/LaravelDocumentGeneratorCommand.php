@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Wovosoft\LaravelDocumentGenerator\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelDocumentGeneratorCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-document-generator';
 
     public $description = 'My command';
 
