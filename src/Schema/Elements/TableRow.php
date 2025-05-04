@@ -2,7 +2,4 @@
 
 namespace Wovosoft\LaravelDocumentGenerator\Schema\Elements;
 
-class TableRow
-{
-
-}
+class TableRow {}

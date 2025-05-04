@@ -11,8 +11,10 @@ class Document
     /**
      * @var DocumentElementInterface[]
      */
-    protected array  $children    = [];
-    protected string $size        = 'A4';
+    protected array $children = [];
+
+    protected string $size = 'A4';
+
     protected string $orientation = 'portrait';
 
     public function __construct(
@@ -25,8 +27,7 @@ class Document
         protected string $category = '',
         protected string $manager = '',
         protected ?DateTimeInterface $createdAt = null
-    )
-    {
+    ) {
         $this->createdAt = $createdAt ?? now();
     }
 
@@ -43,21 +44,24 @@ class Document
     public function setSize(string $size): static
     {
         $this->size = $size;
+
         return $this;
     }
 
     public function addChild(DocumentElementInterface $child): static
     {
         $this->children[] = $child;
+
         return $this;
     }
 
     /**
-     * @param DocumentElementInterface[] $children
+     * @param  DocumentElementInterface[]  $children
      */
     public function setChildren(array $children): static
     {
         $this->children = $children;
+
         return $this;
     }
 
@@ -77,6 +81,7 @@ class Document
     public function setTitle(string $title): static
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -88,6 +93,7 @@ class Document
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -99,6 +105,7 @@ class Document
     public function setCreator(string $creator): static
     {
         $this->creator = $creator;
+
         return $this;
     }
 
@@ -110,6 +117,7 @@ class Document
     public function setSubject(string $subject): static
     {
         $this->subject = $subject;
+
         return $this;
     }
 
@@ -121,6 +129,7 @@ class Document
     public function setKeywords(string $keywords): static
     {
         $this->keywords = $keywords;
+
         return $this;
     }
 
@@ -132,6 +141,7 @@ class Document
     public function setCompany(string $company): static
     {
         $this->company = $company;
+
         return $this;
     }
 
@@ -143,6 +153,7 @@ class Document
     public function setCategory(string $category): static
     {
         $this->category = $category;
+
         return $this;
     }
 
@@ -154,6 +165,7 @@ class Document
     public function setManager(string $manager): static
     {
         $this->manager = $manager;
+
         return $this;
     }
 
@@ -165,6 +177,7 @@ class Document
     public function setCreatedAt(DateTimeInterface $createdAt): static
     {
         $this->createdAt = $createdAt;
+
         return $this;
     }
 
@@ -189,15 +202,15 @@ class Document
     public function toArray(): array
     {
         return [
-            'title'       => $this->title,
+            'title' => $this->title,
             'description' => $this->description,
-            'creator'     => $this->creator,
-            'subject'     => $this->subject,
-            'keywords'    => $this->keywords,
-            'company'     => $this->company,
-            'category'    => $this->category,
-            'manager'     => $this->manager,
-            'created_at'  => $this->createdAt->format('c'),
+            'creator' => $this->creator,
+            'subject' => $this->subject,
+            'keywords' => $this->keywords,
+            'company' => $this->company,
+            'category' => $this->category,
+            'manager' => $this->manager,
+            'created_at' => $this->createdAt->format('c'),
         ];
     }
 }
