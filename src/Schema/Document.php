@@ -5,9 +5,12 @@ namespace Wovosoft\LaravelDocumentGenerator\Schema;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Wovosoft\LaravelDocumentGenerator\Schema\Contracts\DocumentElementInterface;
+use Wovosoft\LaravelDocumentGenerator\Traits\RendersAsHtml;
 
 class Document
 {
+    use RendersAsHtml;
+
     /**
      * @var DocumentElementInterface[]
      */
@@ -27,7 +30,8 @@ class Document
         protected string $category = '',
         protected string $manager = '',
         protected ?DateTimeInterface $createdAt = null
-    ) {
+    )
+    {
         $this->createdAt = $createdAt ?? now();
     }
 
@@ -56,7 +60,7 @@ class Document
     }
 
     /**
-     * @param  DocumentElementInterface[]  $children
+     * @param DocumentElementInterface[] $children
      */
     public function setChildren(array $children): static
     {
@@ -202,15 +206,15 @@ class Document
     public function toArray(): array
     {
         return [
-            'title' => $this->title,
+            'title'       => $this->title,
             'description' => $this->description,
-            'creator' => $this->creator,
-            'subject' => $this->subject,
-            'keywords' => $this->keywords,
-            'company' => $this->company,
-            'category' => $this->category,
-            'manager' => $this->manager,
-            'created_at' => $this->createdAt->format('c'),
+            'creator'     => $this->creator,
+            'subject'     => $this->subject,
+            'keywords'    => $this->keywords,
+            'company'     => $this->company,
+            'category'    => $this->category,
+            'manager'     => $this->manager,
+            'created_at'  => $this->createdAt->format('c'),
         ];
     }
 }
