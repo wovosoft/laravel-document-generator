@@ -6,6 +6,8 @@ trait RendersAsHtml
 {
     public function toHtml()
     {
-        dd($this);
+        return view('laravel-document-generator::renders-as-html', [
+            "schema" => $this,
+        ]);
     }
 }

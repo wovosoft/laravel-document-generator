@@ -18,8 +18,8 @@ class LaravelDocumentGeneratorServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-document-generator')
             ->hasConfigFile()
-            ->hasViews()
             ->hasMigration('create_laravel_document_generator_table')
+            ->hasViews("laravel-document-generator")
             ->hasCommand(LaravelDocumentGeneratorCommand::class);
     }
 }
