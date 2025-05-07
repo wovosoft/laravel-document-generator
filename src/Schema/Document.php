@@ -30,8 +30,7 @@ class Document
         protected string $company = '',
         protected string $category = '',
         protected ?DateTimeInterface $createdAt = null
-    )
-    {
+    ) {
         $this->createdAt = $createdAt ?? now();
     }
 
@@ -54,7 +53,7 @@ class Document
 
     public function getWidth(string $unit = 'px'): string
     {
-        return PageSizeHelper::getPageWidth($this->size, $this->orientation, $unit) . "$unit";
+        return PageSizeHelper::getPageWidth($this->size, $this->orientation, $unit)."$unit";
     }
 
     public function getOrientation(): string
@@ -77,7 +76,7 @@ class Document
     }
 
     /**
-     * @param DocumentElementInterface[] $children
+     * @param  DocumentElementInterface[]  $children
      */
     public function setChildren(array $children): static
     {
@@ -222,15 +221,15 @@ class Document
     public function toArray(): array
     {
         return [
-            'title'       => $this->title,
+            'title' => $this->title,
             'description' => $this->description,
-            'creator'     => $this->creator,
-            'subject'     => $this->subject,
-            'keywords'    => $this->keywords,
-            'company'     => $this->company,
-            'category'    => $this->category,
-            'manager'     => $this->manager,
-            'created_at'  => $this->createdAt->format('c'),
+            'creator' => $this->creator,
+            'subject' => $this->subject,
+            'keywords' => $this->keywords,
+            'company' => $this->company,
+            'category' => $this->category,
+            'manager' => $this->manager,
+            'created_at' => $this->createdAt->format('c'),
         ];
     }
 }
