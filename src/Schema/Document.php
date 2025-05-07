@@ -55,7 +55,6 @@ class Document
     public function getWidth(string $unit = 'px'): string
     {
         return PageSizeHelper::getPageWidth($this->size, $this->orientation, $unit) . "$unit";
-
     }
 
     public function getOrientation(): string
