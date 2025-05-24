@@ -2,9 +2,7 @@
 
 namespace Wovosoft\LaravelDocumentGenerator\Schema\Elements;
 
-use Wovosoft\LaravelDocumentGenerator\Schema\Contracts\DocumentElementInterface;
-
-class Text implements DocumentElementInterface
+class Text
 {
     public function getType(): string
     {
